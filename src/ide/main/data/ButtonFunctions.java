@@ -390,9 +390,7 @@ public class ButtonFunctions {
 						System.err.println("Error occured in the creation of the sprite " + nameField.getText() + "!");
 						System.exit(1);
 					}
-					System.out.println(Sprite.sprites.size());
-					Sprite.sprites.add(new Sprite(id, 0, 0, Integer.parseInt(xPosField.getText()), Integer.parseInt(yPosField.getText()), Integer.parseInt(widthField.getText()), Integer.parseInt(heightField.getText()), colourId, Environment.resLocation + "spriteSheets/" + spriteSheetSelector.getItemAt(spriteSheetSelector.getSelectedIndex())));
-					System.out.println(Sprite.sprites.size());
+					Sprite.sprites.add(new Sprite(id, 0, 0, Integer.parseInt(xPosField.getText()), Integer.parseInt(yPosField.getText()), Integer.parseInt(widthField.getText()) * TileData.tileSize, Integer.parseInt(heightField.getText()) * TileData.tileSize, colourId, Environment.resLocation + "spriteSheets/" + spriteSheetSelector.getItemAt(spriteSheetSelector.getSelectedIndex())));
 					reloadSprites();
 					frame.dispose();
 				}
