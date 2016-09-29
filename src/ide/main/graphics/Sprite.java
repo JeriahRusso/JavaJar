@@ -119,7 +119,7 @@ public class Sprite extends Render{
 			while(!newId){
 				newId = true;
 				for(int i = 0; i < colours.size(); i++){
-					if(Integer.parseInt(colours.get(i)) == id){
+					if(Integer.parseInt(colours.get(i), 16) == id){
 						newId = false;
 						id++;
 						break;
