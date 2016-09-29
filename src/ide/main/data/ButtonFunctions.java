@@ -214,7 +214,7 @@ public class ButtonFunctions {
 	
 	//Gets the user to input all required variables about a sprite that are then stored for use within the engine
 	//TODO: Change this to use a visual system to allow for easier creation
-	public static void buildSprite(){
+	/*public static void buildSprite(){
 		if(getImportedSheets() == null){
 			System.err.println("No sprite sheets imported so no sprites could be created!");
 			return;
@@ -402,6 +402,60 @@ public class ButtonFunctions {
 		JButton cancel = new JButton("Cancel");
 		gbc.gridx = 1;
 		gbc.gridy = 9;
+		gbc.weightx = 0;
+		cancel.addActionListener(new ActionListener(){
+
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+			
+		});
+		panel.add(cancel, gbc);
+		
+		frame.add(panel);
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
+	}*/
+	
+	public static void buildSprite(){
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		frame.setSize(200, 200);
+		frame.setTitle("Java Jar Sprite Creator");
+		panel.setLayout(new GridBagLayout());
+		GridBagConstraints gbc = new GridBagConstraints();
+		
+		JLabel spriteSheets = new JLabel("Sprite Sheet: ");
+		gbc.fill = GridBagConstraints.NONE;
+		gbc.gridx = 0;
+		gbc.gridy = 1;
+		gbc.weightx = 0;
+		panel.add(spriteSheets, gbc);
+		
+		JComboBox<String> spriteSheetSelector = new JComboBox<String>(getImportedSheets());
+		gbc.fill = GridBagConstraints.HORIZONTAL;
+		gbc.gridx = 1;
+		gbc.gridy = 1;
+		gbc.weightx = 0.5;
+		panel.add(spriteSheetSelector, gbc);
+		
+		JButton confirm = new JButton("Confirm");
+		gbc.fill = GridBagConstraints.NONE;
+		gbc.gridx = 0;
+		gbc.gridy = 2;
+		gbc.weightx = 0.5;
+		confirm.addActionListener(new ActionListener(){
+
+			public void actionPerformed(ActionEvent e) {
+				graphicalSpriteBuild(spriteSheetSelector.getItemAt(spriteSheetSelector.getSelectedIndex()));
+			}
+		});
+			
+		panel.add(confirm, gbc);
+		
+		JButton cancel = new JButton("Cancel");
+		gbc.gridx = 1;
+		gbc.gridy = 2;
 		gbc.weightx = 0;
 		cancel.addActionListener(new ActionListener(){
 
@@ -842,5 +896,13 @@ public class ButtonFunctions {
 			}
 		}
 		return sprites;
+	}
+	
+	private static void graphicalSpriteBuild(String spriteSheet){
+		SpriteSheet sheet = new SpriteSheet(Environment.resLocation + "spriteSheets/" + spriteSheet);
+		JFrame frame = new JFrame("Graphical Creation");
+		frame.setSize(sheet.width * Environment.scale, sheet.height * Environment.scale);
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
 	}
 }
