@@ -1,6 +1,5 @@
 package ide.main.graphics;
 
-import ide.main.Engine;
 import ide.main.Environment;
 import ide.main.inputs.InputHandler;
 

@@ -19,7 +19,7 @@ public class LevelDisplayZone extends Render{
 	public Tile[] tileData;
 	public Sprite[] spriteData;
 	
-	//This is the editable area within the IDE that the user draws there level into
+	//This is the editable area within the IDE that the user draws their level into
 	public LevelDisplayZone(int width, int height, int xPos, int yPos) {
 		super(width, height);
 		SpriteSheet level = new SpriteSheet(Environment.resLocation + "levels/" + LevelData.levelName + "/" + LevelData.levelName + ".png");

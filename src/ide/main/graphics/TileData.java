@@ -29,8 +29,8 @@ public class TileData {
 			super(width, height);
 			this.id = id;
 			this.colourIdentity = colourIdentity;
-			this.tileX = tileX;
-			this.tileY = tileY;
+			this.tileX = tileX * TileData.tileSize;
+			this.tileY = tileY * TileData.tileSize;
 			this.colourIdentity = colourIdentity;
 			this.sheet = sheet;
 			buildTileData();
