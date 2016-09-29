@@ -82,7 +82,7 @@ public class Sprite extends Render{
 				while(scanner.hasNext()){
 					tempData.add(scanner.nextLine());
 				}
-				rawSprites.add(new Sprite(Integer.parseInt(tempData.get(0), 16), 0, 0, Integer.parseInt(tempData.get(3)), Integer.parseInt(tempData.get(4)) * TileData.tileSize, Integer.parseInt(tempData.get(5)) * TileData.tileSize, Integer.parseInt(tempData.get(6)) * TileData.tileSize, Integer.parseInt(tempData.get(7)), Environment.resLocation + "spriteSheets/" + tempData.get(2)));
+				rawSprites.add(new Sprite(Integer.parseInt(tempData.get(0), 16), 0, 0, Integer.parseInt(tempData.get(3)), Integer.parseInt(tempData.get(4)) * TileData.tileSize, Integer.parseInt(tempData.get(5)) * TileData.tileSize, Integer.parseInt(tempData.get(6)) * TileData.tileSize, Integer.parseInt(tempData.get(7), 16), Environment.resLocation + "spriteSheets/" + tempData.get(2)));
 			}
 			sprites = rawSprites;
 		} catch (FileNotFoundException e) {

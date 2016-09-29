@@ -1,5 +1,6 @@
 package ide.main.graphics;
 
+import ide.main.Engine;
 import ide.main.Environment;
 import ide.main.inputs.InputHandler;
 
@@ -32,7 +33,7 @@ public class DisplayBox extends Render{
 	
 	public DisplayBox(int xPos, int yPos, int width, int height, int backgroundColour, Sprite[] contentSprites) {
 		super(width, height);
-		spritesAcross = (double)(width) / (double)(TileData.tileSize);
+		spritesAcross = (double)(width) / ((double)((TileData.tileSize) * Environment.scale) + (double)padding);
 		
 		this.xPos = xPos;
 		this.yPos = yPos;

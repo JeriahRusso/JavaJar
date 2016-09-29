@@ -174,7 +174,7 @@ public class Engine extends Render{
 				while(scanner.hasNext()){
 					data.add(scanner.nextLine());
 				}
-				sprites.add(new Sprite(Integer.parseInt(data.get(0)), 0, 0, Integer.parseInt(data.get(3)), Integer.parseInt(data.get(4)), Integer.parseInt(data.get(5)) * TileData.tileSize, Integer.parseInt(data.get(6)) * TileData.tileSize, Integer.parseInt(data.get(7)), Environment.resLocation + "spriteSheets/" + data.get(2)));
+				sprites.add(new Sprite(Integer.parseInt(data.get(0)), 0, 0, Integer.parseInt(data.get(3)), Integer.parseInt(data.get(4)), Integer.parseInt(data.get(5)) * TileData.tileSize, Integer.parseInt(data.get(6)) * TileData.tileSize, Integer.parseInt(data.get(7), 16), Environment.resLocation + "spriteSheets/" + data.get(2)));
 			}
 			finalSprites = new Sprite[sprites.size()];
 			for(int i = 0; i < finalSprites.length; i++){
